@@ -1,2 +1,11 @@
-# test_repo_1
-test_1
+# learning-testing repo
+
+
+git  
+docker  
+php  
+js  
+html  
+css  
+sql  
+
