@@ -21,3 +21,7 @@ https://selectel.ru/blog/tutorials/how-to-rebase-commits-and-branches/
 Нам нужно интегрировать изменения из ветки develop в master. Воспользуемся обычным rebase:  
 git checkout develop  
 git rebase master
+
+
+https://habr.com/ru/articles/161009/
+
