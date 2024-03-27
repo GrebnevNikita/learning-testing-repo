@@ -25,3 +25,5 @@ git rebase master
 
 https://habr.com/ru/articles/161009/
 
+- A pull request is a comparison of two branches  
+- rebase  нет разницы откуда куда и всеровно надо мерджить конфликты  
