@@ -120,4 +120,39 @@ wsl --shutdown
 
 
 по видео гайды
-https://www.youtube.com/watch?v=O8N1lvkIjig&ab_channel=RomNero
+https://www.youtube.com/watch?v=O8N1lvkIjig&ab_channel=RomNero  
+service docker status
+
+-d = detach = no console log
+remove
+docker rm (first id simbols or in row  aa bb cc)
+
+dicker images
+docker rmi (first id simbols or in row  aa bb cc)
+
+run = new
+start = start
+
+docker pause  (first id simbols or in row  aa bb cc)
+docker unpause  (first id simbols or in row  aa bb cc)
+docker stop  (first id simbols or in row  aa bb cc)
+docker kill  (first id simbols or in row  aa bb cc)
+
+(--rm remove after stop)
+docker run --rm -d ubuntu sleep 900
+
+docker stats (id)
+
+--name + (name)
+docker run -d -rm --name New-name ubuntu  echo 'execute command'
+
+docker logs (idname)  log
+docker logs -f (idname) real time log
+
+run inside container
+-it interactive
+docker exec -it (idname) (command)
+
+exit  ctrl -d ?
+
+docker ps -a  = all containers, with stopped
