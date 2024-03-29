@@ -20,7 +20,7 @@ https://docs.docker.com/guides/walkthroughs/multi-container-apps/
 In this walkthrough, you persisted data between containers using a volume.
 You can use this to persist and share data among isolated and ephemeral containers.
 
-docker compose watch
+
 (multi) docker compose up -d
 (autoupdate) docker compose watch
 
@@ -113,3 +113,11 @@ docker stop <the-container-id>
 Once the container has stopped, you can remove it by using the docker rm command.
 
 docker rm <the-container-id>
+
+https://docs.docker.com/get-started/04_sharing_app/  
+
+wsl --shutdown
+
+
+по видео гайды
+https://www.youtube.com/watch?v=O8N1lvkIjig&ab_channel=RomNero
