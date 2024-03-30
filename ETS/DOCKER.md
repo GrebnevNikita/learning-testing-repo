@@ -156,3 +156,27 @@ docker exec -it (idname) (command)
 exit  ctrl -d ?
 
 docker ps -a  = all containers, with stopped
+
+delete stopped containers, images, volumes
+docker system prune -a --vulumes
+
+
+http port 80
+-p mapping
+несколько контейнеров с разных портов доступа внешне
+docker run -p 80:80 nginx
+docker run -p 8080:80 nginx
+
+
+env
+mysql
+
+
+docker run -v (path on disk):(path in docker) (name)
+
+docker run -v /opt/mysql_data:/var/lib/mysql mysql
+docker run -v /opt/app_conf:/ets/app/config app
+
+docker run -v (new volume name):(path in docker) (name)
+docker run -v mysql_data:/var/lib/mysql mysql
+docker run -v app_conf:/ets/app/config app
