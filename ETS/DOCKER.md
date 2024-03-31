@@ -7,6 +7,20 @@ a base operating system. You can use Docker Desktop to manage and explore
 your containers.  
 
 
+---- php with external mysql autosync
+
+
+
+
+
+
+
+
+
+
+
+
+
 cd /path/to/welcome-to-docker/
 
 docker build -t welcome-to-docker .  
@@ -180,3 +194,10 @@ docker run -v /opt/app_conf:/ets/app/config app
 docker run -v (new volume name):(path in docker) (name)
 docker run -v mysql_data:/var/lib/mysql mysql
 docker run -v app_conf:/ets/app/config app
+
+
+cat?
+
+docker network
+
+bridge
