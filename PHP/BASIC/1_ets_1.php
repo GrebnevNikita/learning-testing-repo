@@ -16,5 +16,20 @@ echo 'This is yet another test';
 echo 'One Final Test'; # This is a one-line shell-style comment
 ?>
 
+PHP supports one error control operator: the at sign (@)
 
+<?php
+/* Intentional file error */
+$my_file = @file ('non_existent_file') or
+die ("Failed opening file: error was '" . error_get_last()['message'] . "'");
+$cache=[];
+// this works for any expression, not just functions:
+$value = @$cache[1];
+// will not issue a notice if the index $key doesn't exist.
 
+?>
+
+<?php
+$output = `ls -al`;
+echo "<pre>$output</pre>";
+?>
