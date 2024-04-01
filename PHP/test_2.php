@@ -1,8 +1,10 @@
 <?php
-
-$a = 3; $b = 2;
-echo (int) $a / (int) $b;
-
+session_start();
+print_r('<br>');
+print_r('<pre>');
+print_r($_SESSION);
+print_r('</pre>');
+print_r('<br>');
 
 ?>
 
