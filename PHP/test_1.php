@@ -1,4 +1,6 @@
 <?php
+
+
 namespace Aaaa;
 
 interface iiiiiii
