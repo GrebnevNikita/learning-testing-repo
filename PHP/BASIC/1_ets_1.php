@@ -32,4 +32,7 @@ $value = @$cache[1];
 <?php
 $output = `ls -al`;
 echo "<pre>$output</pre>";
+
+$name  =123;
+printf("Hello %s\r\n", $name);
 ?>
