@@ -201,3 +201,13 @@ cat?
 docker network
 
 bridge
+
+
+
+try php with external mysql autosync
+
+https://habr.com/ru/articles/459972/
+https://habr.com/ru/articles/460173/
+
+
+
