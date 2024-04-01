@@ -204,10 +204,10 @@ bridge
 
 
 
-try php with external mysql autosync
+php with external mysql autosync
 
 https://habr.com/ru/articles/459972/
 https://habr.com/ru/articles/460173/
 
-
+https://github.com/drandin/docker-php-workspace?ref=vc.ru
 
