@@ -11,5 +11,5 @@ print_r('<br>');
 
 <script>
 
-    result = confirm(213123);
+    // result = confirm(213123);
 </script>
