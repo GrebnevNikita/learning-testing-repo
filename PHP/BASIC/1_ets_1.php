@@ -36,3 +36,9 @@ echo "<pre>$output</pre>";
 $name  =123;
 printf("Hello %s\r\n", $name);
 ?>
+
+
+\ (backslash) is the namespace separator in PHP 5.3.
+A \ before the beginning of a function represents the Global Namespace.
+Putting it there will ensure that the function called is from the global
+namespace, even if there is a function by the same name in the current namespace.
