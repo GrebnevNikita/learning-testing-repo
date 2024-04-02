@@ -42,3 +42,13 @@ printf("Hello %s\r\n", $name);
 A \ before the beginning of a function represents the Global Namespace.
 Putting it there will ensure that the function called is from the global
 namespace, even if there is a function by the same name in the current namespace.
+
+overloading Перегрузка свойств с помощью методов __get(), __set(), __isset() и __unset()
+по сути позволяет менять код при установке или чтении переменных в классе + при __isset() и __unset()
+и добавить вывод сообщения например
+
+public function __set($name, $value)
+{
+echo "Установка '$name' в '$value'\n";
+$this->data[$name] = $value;
+}
