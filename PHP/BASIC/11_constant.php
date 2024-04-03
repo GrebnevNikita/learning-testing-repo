@@ -26,7 +26,10 @@ echo ANIMALS[1]; // outputs "cat"
 ?>
 
 Magic constants ¶
-There are nine magical constants that change depending on where they are used. For example, the value of __LINE__ depends on the line that it's used on in your script. All these "magical" constants are resolved at compile time, unlike regular constants, which are resolved at runtime. These special constants are case-insensitive and are as follows:
+There are nine magical constants that change depending on where they are used.
+For example, the value of __LINE__ depends on the line that it's used on in your script.
+All these "magical" constants are resolved at compile time, unlike regular constants,
+which are resolved at runtime. These special constants are case-insensitive and are as follows:
 
 PHP's magic constants
 Name	Description

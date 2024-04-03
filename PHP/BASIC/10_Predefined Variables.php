@@ -1,20 +1,19 @@
 
 
 
-Superglobals — Built-in variables that are always available in all scopes
-$GLOBALS — References all variables available in global scope
-$_SERVER — Server and execution environment information
-$_GET — HTTP GET variables
-$_POST — HTTP POST variables
-$_FILES — HTTP File Upload variables
-$_REQUEST — HTTP Request variables
-$_SESSION — Session variables
-$_ENV — Environment variables
+Суперглобальные переменные — Встроенные переменные, которые всегда доступны во всех областях
+$GLOBALS — Ссылки на все переменные глобальной области видимости
+$_SERVER — Информация о сервере и среде исполнения
+$_GET — Переменные HTTP GET
+$_POST — Переменные HTTP POST
+$_FILES — Переменные файлов, загруженных по HTTP
+$_REQUEST — Переменные HTTP-запроса
+$_SESSION — Переменные сессии
+$_ENV — Переменные окружения
 $_COOKIE — HTTP Cookies
-$php_errormsg — The previous error message
-$http_response_header — HTTP response headers
-$argc — The number of arguments passed to script
-$argv — Array of arguments passed to script
-
+$php_errormsg — Предыдущее сообщение об ошибке
+$http_response_header — Заголовки ответов HTTP
+$argc — Количество аргументов, переданных скрипту
+$argv — Массив переданных скрипту аргументов
 
 

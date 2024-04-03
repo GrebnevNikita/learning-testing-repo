@@ -1,67 +1,34 @@
-Сериализация и десериализация
+Сериализация объектов ¶
+Сериализация объектов - сохранение объектов между сессиями ¶
 
 <?php
-class Connection
-{
-    protected $link;
-    private $dsn, $username, $password;
+// A.php:
 
-    public function __construct($dsn, $username, $password)
-    {
-        $this->dsn = $dsn;
-        $this->username = $username;
-        $this->password = $password;
-        $this->connect();
-    }
+class A {
+    public $one = 1;
 
-    private function connect()
-    {
-        $this->link = new PDO($this->dsn, $this->username, $this->password);
-    }
-
-    public function __serialize(): array
-    {
-        return [
-            'dsn' => $this->dsn,
-            'user' => $this->username,
-            'pass' => $this->password,
-        ];
-    }
-
-    public function __unserialize(array $data): void
-    {
-        $this->dsn = $data['dsn'];
-        $this->username = $data['user'];
-        $this->password = $data['pass'];
-
-        $this->connect();
-    }
-}?>
-
-Простой пример
-
-<?php
-
-// Объявление простого класса
-class TestClass
-{
-    public $foo;
-
-    public function __construct($foo)
-    {
-        $this->foo = $foo;
-    }
-
-    public function __toString()
-    {
-        return $this->foo;
+    public function show_one() {
+        echo $this->one;
     }
 }
 
-$class = new TestClass('Привет');
-echo $class;
+// page1.php:
 
+include "A.php";
+
+$a = new A;
+$s = serialize($a);
+// сохраняем $s где-нибудь, откуда page2.php сможет его получить.
+file_put_contents('store', $s);
+
+// page2.php:
+
+// это нужно для того, чтобы функция unserialize работала правильно.
+include "A.php";
+
+$s = file_get_contents('store');
+$a = unserialize($s);
+
+// теперь можно использовать метод show_one() объекта $a.
+$a->show_one();
 ?>
-Результат выполнения приведённого примера:
-
-Привет
