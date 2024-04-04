@@ -13,6 +13,7 @@ echo CONSTANT;
 const ANOTHER_CONST = CONSTANT.'; Goodbye World';
 echo ANOTHER_CONST;
 
+const animals = array('dog', 'cat', 'bird');
 const ANIMALS = array('dog', 'cat', 'bird');
 echo ANIMALS[1]; // outputs "cat"
 
