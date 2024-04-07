@@ -57,7 +57,6 @@ alert(Number("123z"));      // NaN (ошибка чтения числа на м
 alert(Number(true));        // 1
 alert(Number(false));       // 0
 
-
 alert(Boolean(1)); // true
 alert(Boolean(0)); // false
 
