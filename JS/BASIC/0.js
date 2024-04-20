@@ -1,1 +1,1 @@
-for (let key in user) alert(key); 
+for (let key in user) {alert(key)};
