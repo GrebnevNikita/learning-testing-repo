@@ -207,9 +207,7 @@ let sum = function(a, b) {
 };
 */
 
-alert( sum(1, 2) ); // 3
-
-
+alert(sum(1, 2)); // 3
 
 
 typeof undefined // "undefined"
@@ -590,11 +588,6 @@ john = {
 //
 
 
-
-
-
-
-
 // Опциональная цепочка '?.'
 // Новая возможность
 // Эта возможность была добавлена в язык недавно. В старых браузерах может понадобиться полифил. !!!!!
@@ -688,7 +681,6 @@ let id2 = Symbol("id");
 alert(id1 == id2); // false
 
 
-
 // Символы в литеральном объекте
 // Если мы хотим использовать символ при литеральном объявлении объекта {...}, его необходимо заключить в квадратные скобки.
 
@@ -715,14 +707,12 @@ let id = Symbol.for("id"); // если символа не существует,
 let idAgain = Symbol.for("id");
 
 // проверяем -- это один и тот же символ
-alert( id === idAgain ); // true
+alert(id === idAgain); // true
 
 
 // получаем имя по символу
-alert( Symbol.keyFor(sym) ); // name
-alert( Symbol.keyFor(sym2) ); // id
-
-
+alert(Symbol.keyFor(sym)); // name
+alert(Symbol.keyFor(sym2)); // id
 
 
 // Хинты
@@ -737,7 +727,6 @@ alert(obj);
 
 // используем объект в качестве ключа
 anotherObj[obj] = 123;
-
 
 
 // "number"
@@ -801,15 +790,6 @@ let user = {
 alert(user); // toString -> {name: "John"}
 alert(+user); // valueOf -> 1000
 alert(user + 500); // valueOf -> 1500
-
-
-
-
-
-
-
-
-
 
 
 // Примитив как объект
@@ -923,18 +903,18 @@ let guestList = `Guests:
 alert(guestList); // список гостей, состоящий из нескольких строк
 
 
-alert( `The backslash: \\` ); // The backslash: \
+alert(`The backslash: \\`); // The backslash: \
 
 
 let str = `Hello`;
 
 // получаем первый символ
-alert( str[0] ); // H
-alert( str.at(0) ); // H
+alert(str[0]); // H
+alert(str.at(0)); // H
 
 // получаем последний символ
-alert( str[str.length - 1] ); // o
-alert( str.at(-1) ); // o
+alert(str[str.length - 1]); // o
+alert(str.at(-1)); // o
 
 
 // Также можно перебрать строку посимвольно, используя for..of:
@@ -952,19 +932,19 @@ for (let char of "Hello") {
 //
 // str[0] = 'h'; // ошибка
 // alert( str[0] ); // не работает
-alert( 'Interface'.toUpperCase() ); // INTERFACE
-alert( 'Interface'.toLowerCase() ); // interface
+alert('Interface'.toUpperCase()); // INTERFACE
+alert('Interface'.toLowerCase()); // interface
 
 
 let str = 'Widget with id';
 
-alert( str.indexOf('Widget') ); // 0, потому что подстрока 'Widget' найдена в начале
-alert( str.indexOf('widget') ); // -1, совпадений нет, поиск чувствителен к регистру
+alert(str.indexOf('Widget')); // 0, потому что подстрока 'Widget' найдена в начале
+alert(str.indexOf('widget')); // -1, совпадений нет, поиск чувствителен к регистру
 
-alert( str.indexOf("id") ); // 1, подстрока "id" найдена на позиции 1 (..idget with id)
+alert(str.indexOf("id")); // 1, подстрока "id" найдена на позиции 1 (..idget with id)
 
 // Необязательный второй аргумент позволяет начать поиск с определённой позиции.
-alert( str.indexOf('id', 2) ) // 12
+alert(str.indexOf('id', 2)) // 12
 
 // Чтобы найти все вхождения подстроки, нужно запустить indexOf в цикле. Каждый раз, получив очередную позицию, начинаем новый поиск со следующей:
 
@@ -977,10 +957,9 @@ while (true) {
     let foundPos = str.indexOf(target, pos);
     if (foundPos == -1) break;
 
-    alert( `Найдено тут: ${foundPos}` );
+    alert(`Найдено тут: ${foundPos}`);
     pos = foundPos + 1; // продолжаем со следующей позиции
 }
-
 
 
 str.lastIndexOf(substr, position)
@@ -995,64 +974,64 @@ if (str.indexOf("Widget") != -1) {
 }
 
 
-alert( "Widget with id".includes("Widget") ); // true
+alert("Widget with id".includes("Widget")); // true
 
-alert( "Hello".includes("Bye") ); // false
+alert("Hello".includes("Bye")); // false
 // Необязательный второй аргумент str.includes позволяет начать поиск с определённой позиции:
 
-alert( "Midget".includes("id") ); // true
-alert( "Midget".includes("id", 3) ); // false, поиск начат с позиции 3
+alert("Midget".includes("id")); // true
+alert("Midget".includes("id", 3)); // false, поиск начат с позиции 3
 // Методы str.startsWith и str.endsWith проверяют, соответственно, начинается ли и заканчивается ли строка определённой строкой:
 
-alert( "Widget".startsWith("Wid") ); // true, "Wid" — начало "Widget"
-alert( "Widget".endsWith("get") ); // true, "get" — окончание "Widget"
+alert("Widget".startsWith("Wid")); // true, "Wid" — начало "Widget"
+alert("Widget".endsWith("get")); // true, "get" — окончание "Widget"
 
 
 let str = "stringify";
 // 'strin', символы от 0 до 5 (не включая 5)
-alert( str.slice(0, 5) );
+alert(str.slice(0, 5));
 // 's', от 0 до 1, не включая 1, т. е. только один символ на позиции 0
-alert( str.slice(0, 1) );
+alert(str.slice(0, 1));
 // Если аргумент end отсутствует, slice возвращает символы до конца строки:
 
 let str = "stringify";
-alert( str.slice(2) ); // ringify, с позиции 2 и до конца
+alert(str.slice(2)); // ringify, с позиции 2 и до конца
 // Также для start/end можно задавать отрицательные значения. Это означает, что позиция определена как заданное количество символов с конца строки:
 
 let str = "stringify";
 
 // начинаем с позиции 4 справа, а заканчиваем на позиции 1 справа
-alert( str.slice(-4, -1) ); // gif
+alert(str.slice(-4, -1)); // gif
 
 let str = "stringify";
 
 // для substring эти два примера — одинаковы
-alert( str.substring(2, 6) ); // "ring"
-alert( str.substring(6, 2) ); // "ring"
+alert(str.substring(2, 6)); // "ring"
+alert(str.substring(6, 2)); // "ring"
 
 // …но не для slice:
-alert( str.slice(2, 6) ); // "ring" (то же самое)
-alert( str.slice(6, 2) ); // "" (пустая строка)
+alert(str.slice(2, 6)); // "ring" (то же самое)
+alert(str.slice(6, 2)); // "" (пустая строка)
 
 
 // В противоположность предыдущим методам, этот позволяет указать длину вместо конечной позиции:
 
 let str = "stringify";
 // ring, получаем 4 символа, начиная с позиции 2
-alert( str.substr(2, 4) );
+alert(str.substr(2, 4));
 // Значение первого аргумента может быть отрицательным, тогда позиция определяется с конца:
 
 let str = "stringify";
 // gi, получаем 2 символа, начиная с позиции 4 с конца строки
-alert( str.substr(-4, 2) );
+alert(str.substr(-4, 2));
 
 
 // Из двух других вариантов, slice более гибок, он поддерживает отрицательные аргументы, и его короче писать. Так что, в принципе, можно запомнить только его.
 
 // будет иметь разные коды
-alert( "z".codePointAt(0) ); // 122
-alert( "Z".codePointAt(0) ); // 90
-alert( String.fromCodePoint(90) ); // Z
+alert("z".codePointAt(0)); // 122
+alert("Z".codePointAt(0)); // 90
+alert(String.fromCodePoint(90)); // Z
 
 
 // Давайте сделаем строку, содержащую символы с кодами от 65 до 220 — это латиница и ещё некоторые распространённые символы:
@@ -1062,13 +1041,9 @@ let str = '';
 for (let i = 65; i <= 220; i++) {
     str += String.fromCodePoint(i);
 }
-alert( str );
+alert(str);
 // ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
 // ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜ
-
-
-
-
 
 
 let arr = new Array();
@@ -2028,14 +2003,14 @@ alert(json);
 }
 */
 // число в JSON остаётся числом
-alert( JSON.stringify(1) ) // 1
+alert(JSON.stringify(1)) // 1
 
 // строка в JSON по-прежнему остаётся строкой, но в двойных кавычках
-alert( JSON.stringify('test') ) // "test"
+alert(JSON.stringify('test')) // "test"
 
-alert( JSON.stringify(true) ); // true
+alert(JSON.stringify(true)); // true
 
-alert( JSON.stringify([1, 2, 3]) ); // [1,2,3]
+alert(JSON.stringify([1, 2, 3])); // [1,2,3]
 
 
 //JSON является независимой от языка спецификацией для данных, поэтому JSON.stringify пропускает некоторые специфические свойства объектов JavaScript.
@@ -2051,7 +2026,7 @@ let user = {
     something: undefined // как и это - пропущено
 };
 
-alert( JSON.stringify(user) ); // {} (пустой объект)
+alert(JSON.stringify(user)); // {} (пустой объект)
 
 // Вот типичные ошибки в написанном от руки JSON (иногда приходится писать его для отладки):
 JSON.parse(json);
@@ -2071,70 +2046,287 @@ let schedule = `{
   ]
 }`;
 
-schedule = JSON.parse(schedule, function(key, value) {
+schedule = JSON.parse(schedule, function (key, value) {
     if (key == 'date') return new Date(value);
     return value;
 });
 
-alert( schedule.meetups[1].date.getDate() ); // 18 - отлично!
+alert(schedule.meetups[1].date.getDate()); // 18 - отлично!
 
 
+// Итеративный способ: цикл for:
+
+function pow(x, n) {
+    let result = 1;
+
+    // умножаем result на x n раз в цикле
+    for (let i = 0; i < n; i++) {
+        result *= x;
+    }
+
+    return result;
+}
+
+alert(pow(2, 3)); // 8
+// Рекурсивный способ: упрощение задачи и вызов функцией самой себя:
+
+function pow(x, n) {
+    if (n == 1) {
+        return x;
+    } else {
+        return x * pow(x, n - 1);
+    }
+}
+
+alert(pow(2, 3)); // 8
 
 
+//Остаточные параметры (...)
 
 
+//Многие встроенные функции JavaScript поддерживают произвольное количество аргументов.
+//
+// Math.max(arg1, arg2, ..., argN) – вычисляет максимальное число из переданных.
+// Object.assign(dest, src1, ..., srcN) – копирует свойства из исходных объектов src1..N в
+
+function sum(a, b) {
+    return a + b;
+}
+
+function sumAll(...args) { // args — имя массива
+    let sum = 0;
+
+    for (let arg of args) sum += arg;
+
+    return sum;
+}
+
+alert(sumAll(1)); // 1
+alert(sumAll(1, 2)); // 3
+alert(sumAll(1, 2, 3)); // 6
 
 
+// Остаточные параметры должны располагаться в конце
+// Остаточные параметры собирают все остальные аргументы, поэтому бессмысленно писать что-либо после них. Это вызовет ошибку:
+
+// function f(arg1, ...rest, arg2) { // arg2 после ...rest ?!
+//                                   // Ошибка
+// }
 
 
+// Переменная "arguments"
+// Все аргументы функции находятся в псевдомассиве arguments под своими порядковыми номерами.
+
+function showName() {
+    alert(arguments.length);
+    alert(arguments[0]);
+    alert(arguments[1]);
+
+    // Объект arguments можно перебирать
+    // for (let arg of arguments) alert(arg);
+}
+
+// Вывод: 2, Юлий, Цезарь
+showName("Юлий", "Цезарь");
+
+// Вывод: 1, Илья, undefined (второго аргумента нет)
+showName("Илья");
 
 
+// Стрелочные функции не имеют "arguments"
+// Если мы обратимся к arguments из стрелочной функции, то получим аргументы внешней «нормальной» функции.
+
+function f() {
+    let showArg = () => alert(arguments[0]);
+    showArg(2);
+}
+
+f(1); // 1
+// Как мы помним, у стрелочных функций нет собственного this. Теперь мы знаем, что нет и своего объекта arguments.
 
 
+let arr = [3, 5, 1];
+
+alert(Math.max(arr)); // NaN
+
+let arr = [3, 5, 1];
+
+alert(Math.max(...arr)); // 5 (оператор "раскрывает" массив в список аргументов)
+
+let arr1 = [1, -2, 3, 4];
+let arr2 = [8, 3, -8, 1];
+
+alert(Math.max(...arr1, ...arr2)); // 8
+
+let arr1 = [1, -2, 3, 4];
+let arr2 = [8, 3, -8, 1];
+
+alert(Math.max(1, ...arr1, 2, ...arr2, 25)); // 25
 
 
+let str = "Привет";
+
+alert([...str]); // П,р,и,в,е,т
 
 
+// Если переменная объявлена внутри блока кода {...}, то она видна только внутри этого блока.
+{
+    // показать сообщение
+    let message = "Hello";
+    alert(message);
+}
+
+{
+    // показать другое сообщение
+    let message = "Goodbye";
+    alert(message);
+}
+
+// Функция называется «вложенной», когда она создаётся внутри другой функции.
+
+function sayHiBye(firstName, lastName) {
+
+    // функция-помощник, которую мы используем ниже
+    function getFullName() {
+        return firstName + " " + lastName;
+    }
+
+    alert("Hello, " + getFullName());
+    alert("Bye, " + getFullName());
+
+}
+
+// Ниже, makeCounter создает функцию «счётчик», которая при каждом вызове возвращает следующее число:
+
+function makeCounter() {
+    let count = 0;
+
+    return function () {
+        return count++; // есть доступ к внешней переменной "count"
+    };
+}
+
+let counter = makeCounter();
+
+alert(counter()); // 0
+alert(counter()); // 1
+alert(counter()); // 2
 
 
+//Замыкания
+// В программировании есть общий термин: «замыкание», – который должен знать каждый разработчик.
+//
+// Замыкание – это функция, которая запоминает свои внешние переменные и может получить к ним доступ.
+// В некоторых языках это невозможно, или функция должна быть написана специальным образом,
+// чтобы получилось замыкание. Но, как было описано выше, в JavaScript, все функции изначально являются
+// замыканиями (есть только одно исключение, про которое будет рассказано в
 
 
+// Для «var» не существует блочной области видимости
 
 
+// Глобальный объект
+// Глобальный объект предоставляет переменные и функции, доступные в любом месте программы.
+// По умолчанию это те, что встроены в язык или среду исполнения.
+//
+//     В браузере он называется window
 
 
+//Объект функции, NFE
+// Как мы уже знаем, в JavaScript функция – это значение.
+//
+// Каждое значение в JavaScript имеет свой тип. А функция – это какой тип?
+//
+// В JavaScript функции – это объекты.
+
+function sayHi() {
+    alert("Hi");
+}
+
+alert(sayHi.name); // sayHi
+
+let sayHi = function () {
+    alert("Hi");
+};
+
+alert(sayHi.name); // sayHi (есть имя!)
+let user = {
+
+    sayHi() {
+        // ...
+    },
+
+    sayBye: function () {
+        // ...
+    }
+
+}
+
+alert(user.sayHi.name); // sayHi
+alert(user.sayBye.name); // sayBye
 
 
+// функция объявлена внутри массива
+let arr = [function () {
+}];
+
+alert(arr[0].name); // <пустая строка>
+// здесь отсутствует возможность определить имя, поэтому его нет
 
 
+// Свойство «length»
+// Ещё одно встроенное свойство «length» содержит количество параметров функции в её объявлении. Например:
+
+function f1(a) {
+}
+
+function f2(a, b) {
+}
+
+function many(a, b, ...more) {
+}
+
+alert(f1.length); // 1
+alert(f2.length); // 2
+alert(many.length); // 2
 
 
+//
+// Пользовательские свойства
+// Мы также можем добавить свои собственные свойства.
+//
+//     Давайте добавим свойство counter для отслеживания общего количества вызовов:
+
+function sayHi() {
+    alert("Hi");
+
+    // давайте посчитаем, сколько вызовов мы сделали
+    sayHi.counter++;
+}
+
+sayHi.counter = 0; // начальное значение
+
+sayHi(); // Hi
+sayHi(); // Hi
+
+alert(`Вызвана ${sayHi.counter} раза`); // Вызвана 2 раза
 
 
+// Синтаксис "new Function"
+// Существует ещё один вариант объявления функции. Он используется крайне редко, но иногда другого решения не найти.
 
+let func = new Function([arg1, arg2, ...argN], functionBody);
+// Функция создаётся с заданными аргументами arg1...argN и телом functionBody.
+let sum = new Function('a', 'b', 'return a + b');
+alert(sum(1, 2)); // 3
+// А вот функция без аргументов, в этом случае достаточно указать только тело:
+let sayHi = new Function('alert("Hello")');
 
+sayHi(); // Hello
+// let str = ... код, полученный с сервера динамически ...
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let func = new Function(str);
+func();
 
 
 
