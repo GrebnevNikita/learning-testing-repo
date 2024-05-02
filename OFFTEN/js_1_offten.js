@@ -1,5 +1,4 @@
-<script src="/path/to/script.js"></script>
-<script>
+// <script src="/path/to/script.js"></script>
 
     let user = {
         name: "John",
@@ -105,4 +104,3 @@
         ));
 
 
-</script>

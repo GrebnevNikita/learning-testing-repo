@@ -1,4 +1,3 @@
-<script>
 
 
 
@@ -27,6 +26,27 @@
 
 
 
+    async function f() {
+
+        try {
+            let response = await fetch('/no-user-here');
+            let user = await response.json();
+        } catch(err) {
+            // перехватит любую ошибку в блоке try: и в fetch, и в response.json
+            alert(err);
+        }
+    }
+
+    f();
+    // Если у нас нет try..catch, асинхронная функция будет возвращать завершившийся с ошибкой промис (в состоянии rejected).
+    //  В этом случае мы можем использовать метод .catch промиса, чтобы обработать ошибку:
+
+    async function f() {
+        let response = await fetch('http://no-such-url');
+    }
+
+    // f() вернёт промис в состоянии rejected
+    f().catch(alert); // TypeError: failed to fetch // (*)
 
 
 
@@ -34,5 +54,3 @@
 
 
 
-
-</script>
