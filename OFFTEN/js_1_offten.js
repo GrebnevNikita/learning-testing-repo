@@ -16,7 +16,7 @@
     for (let i = 0; i <= 11; i++) {
 
     }
-
+$('#EditDesc #descSave').attr( "data-id" )
     $(document).ready(function () {
 
     });
