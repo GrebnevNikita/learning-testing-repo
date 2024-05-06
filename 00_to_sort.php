@@ -9,7 +9,7 @@ Cross Site Scripting (XSS) vulnerabilities.
 
 db injection, hash password, hash
 
-
+URL - Uniform Resource Locator
 
 rest api
 API (англ. Application Programming Interface

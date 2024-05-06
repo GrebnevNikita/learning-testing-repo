@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+HTML
+ HTML (HyperText Markup Language — «язык гипертекстовой разметки») — самый базовый строительный блок Веба.
+Он определяет содержание и структуру веб-контента. Другие технологии, помимо HTML,
+обычно используются для описания внешнего вида/представления (CSS) или функциональности/поведения (JavaScript) веб-страницы.
+
+Под гипертекстом ("hypertext") понимаются ссылки, которые соединяют веб-страницы друг с
+другом либо в пределах одного веб-сайта, либо между веб-сайтами. Ссылки являются фундаментальным аспектом Веба.
+Загружая контент в Интернет и связывая его со страницами, созданными другими людьми, вы становитесь активным участником Всемирной паутины.
+
+HTML использует разметку ("markup") для отображения текста, изображений и другого контента в веб-браузере.
+HTML-разметка включает в себя специальные "элементы", такие как
+<!--<head>, <title>, <body>, <header>, <footer>, <article>, <section>, <p>, <div>, <span>, <img>, <aside>, <audio>,-->
+<!--<canvas>, <datalist>, <details>, <embed>, <nav>, <output>, <progress>, <video> и многие другие.-->
+
+
+
+<img src="picture.jpg">	The "picture.jpg" file is located in the same folder as the current page
+<img src="images/picture.jpg">	The "picture.jpg" file is located in the images folder in the current folder
+<img src="/images/picture.jpg">	The "picture.jpg" file is located in the images folder at the root of the current web
+<img src="../picture.jpg">	The "picture.jpg" file is located in the folder one level up from the current folder
+
+Setting the viewport to make your website look good on all devices:
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+Символы для кода
+ &amp; → & (амперсанд). Используется для представления символа «&», так как сам символ может интерпретироваться как начало мнемоники.
+ &lt; → < (меньше чем). Представляет символ «<», который не может быть напрямую вставлен в код, так как он начинает HTML-тег.
+ &gt; → > (больше чем). Представляет символ «>», который также имеет специальное значение в HTML.
+ &quot; → " (двойные кавычки). Используются для представления символа кавычек в атрибутах тегов.
+ &apos; → ' (одиночные кавычки). Подобно двойным кавычкам, используются в атрибутах тегов.
+
+<img src="img_girl.jpg" style="max-width:100%;height:auto;">
+
+
+<p>Save the document by pressing <kbd>Ctrl + S</kbd></p>
+<p><samp>File not found.<br>Press F1 to continue</samp></p>
+
+
+<!--&entity_name;-->
+
+<!--&#entity_number;-->
+
+
+scheme - defines the type of Internet service (most common is http or https)
+prefix - defines a domain prefix (default for http is www)
+domain - defines the Internet domain name (like w3schools.com)
+port - defines the port number at the host (default for http is 80)
+path - defines a path at the server (If omitted: the root directory of the site)
+filename - defines the name of a document or resource
+
+<form action="/action_page.php">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+
+
+
+<!--The <label> Element
+The <label> element defines a label for several form elements.
+The <label> element is useful for screen-reader users, because the screen-reader will read out loud the label when the user focus on the input element.
+The <label> element also help users who have difficulty clicking on very small regions (such as radio buttons or checkboxes) - because when the user clicks the text within the <label> element, it toggles the radio button/checkbox.
+The for attribute of the <label> tag should be equal to the id attribute of the <input> element to bind them together.-->
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
