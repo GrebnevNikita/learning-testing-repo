@@ -1,0 +1,67 @@
+
+
+/*
+
+
+CSS is the language we use to style an HTML document.
+CSS describes how HTML elements should be displayed.
+CSS stands for Cascading Style Sheets
+
+<link rel="stylesheet" href="mystyle.css">
+<p style="color:red;">This is a paragraph.</p>
+*/
+
+p.center {
+}
+h1, h2, p {
+}
+
+
+
+
+/*каждый второй*/
+tr:nth-child(even) {
+}
+
+
+
+
+
+
+body {
+    background-color: lightblue;
+    color: white;
+
+    text-align: center;
+    font-family: verdana;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

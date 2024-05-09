@@ -22,8 +22,8 @@ PHP, JavaScript, PostgreSQL, Redis, Elasticsearch, Docker, Git
 MySQL NoSQL
 
 
-
-
+js Web Worker ???
+Server-Sent Events ???
 ----
 
 PHP, JavaScript, PostgreSQL, Redis, Elasticsearch, Docker, Git, NoSQL
