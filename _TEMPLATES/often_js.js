@@ -17,8 +17,12 @@ for (let i = 0; i <= 11; i++) {
 
 }
 $('#EditDesc #descSave').attr("data-id")
+
 $(document).ready(function () {
 
+});
+document.addEventListener("DOMContentLoaded", function(event) {
+    //do work
 });
 if (str.indexOf("Widget") != -1) {
     alert("Совпадение есть"); // теперь работает
