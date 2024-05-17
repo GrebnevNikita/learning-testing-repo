@@ -1,5 +1,23 @@
 <?php
 
+$search = escape(trim($_GET['search_req']));
+//$search = 'СЛЕСАРНЫЙ ';
+
+if (strlen($search) < 6) { // x2
+    print_r('<br>');
+    print_r('Запрос должен быть длиннее 2х символов');
+    print_r('<br>');
+    return;
+}
+
+$search_ = explode(' ', $search);
+$search_sql = '';
+foreach ($search_ as $k => $v) {
+    if ($v != '') {
+        $search_sql.= " pagetitle like '%" . $v . "%' and";
+    }
+}
+
 
 // associative arrays
 $user_list = [
@@ -143,3 +161,110 @@ var_dump($a instanceof NotMyClass);
 
 $ids ="1,2,3,";
 substr($ids, 0, -1);
+
+
+
+
+$result_score_max=0;
+// pager start
+$page_current = 1;
+if (isset($_GET['page_n'])) {
+    $page_current = $_GET['page_n'];
+}
+
+$page_step = 16;
+$page_max = intval($result_score_max / $page_step);
+if ($result_score_max % $page_step != 0) {
+    $page_max = $page_max + 1;
+}
+if ($page_current > $page_max) {
+    $page_current = $page_max;
+}
+// pager end
+
+
+//$sku_main = limit " . $page_step . " offset " . $page_step * ($page_current - 1), "0");
+
+
+form_pages("https://gresson.ru/search2/?search_req=".trim($_GET['search_req']),"page_n",$page_current,$page_max);
+function form_pages($base_link, $get_param, $current_page, $max_mage)
+{
+    if ($max_mage <= 1) {
+        return;
+    }
+    ?>
+    <div class="pages">
+        Страница:
+        <?php
+        for ($i = 1; $i <= $max_mage; $i++) {
+// 1000    1 2 3  ...498 499 _ input 500 (enter) _ 501 502 ... 998 999 1000
+            if ($i == $current_page) {
+                ?>
+                <div class="pages_item active">
+                    <input type="text" value="<?php echo $i ?>" id="pages_input">
+                </div>
+                <?php
+            } else {
+                if ($max_mage > 20) {
+                    if ($i <= 3 || $i >= $max_mage - 3 || ($i > $current_page - 3 && $i < $current_page + 3)) {
+                        ?>
+                        <div class="pages_item">
+                            <a href="<?php echo $base_link . '&' . $get_param . '=' . $i ?>"> <?php echo $i ?></a>
+                        </div>
+                        <?php
+                    } else {
+                        if ($i == 4) {
+                            ?>
+                            <div class="pages_item">
+                                ...
+                            </div>
+                            <?php
+                        }
+                        if ($i == $max_mage - 4) {
+                            ?>
+                            <div class="pages_item">
+                                ...
+                            </div>
+                            <?php
+                        }
+                    }
+                } else {
+                    ?>
+                    <div class="pages_item">
+                        <a href="<?php echo $base_link . '&' . $get_param . '=' . $i ?>"> <?php echo $i ?></a>
+                    </div>
+                    <?php
+                }
+            }
+
+
+        }
+        ?>
+    </div>
+    <script>
+        let input = document.getElementById("pages_input")
+        input.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                window.location.replace(' <?php echo $base_link . '&' . $get_param . '='  ?>' + $('#pages_input').val())
+            }
+        });
+    </script>
+    <style>
+        #pages_input {
+            width: 50px;
+        }
+
+        .pages_item {
+            padding: 5px;
+        }
+
+        .pages {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
+    <?php
+}

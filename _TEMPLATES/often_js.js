@@ -24,6 +24,10 @@ $(document).ready(function () {
 document.addEventListener("DOMContentLoaded", function(event) {
     //do work
 });
+
+$('#crm_orders_multi_filter_status_'+url.searchParams.get("status")).prop('checked', true);
+document.querySelector("input[name=crm_orders_multi_filter_status]:checked").value
+
 if (str.indexOf("Widget") != -1) {
     alert("Совпадение есть"); // теперь работает
 }
