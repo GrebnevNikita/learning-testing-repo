@@ -7,3 +7,170 @@
 //Sass reduces repetition of CSS and therefore saves time
 //Sass was designed by Hampton Catlin and developed by Natalie Weizenbaum in 2006
 //Sass is free to download and use
+//Sass lets you use features that do not exist in CSS, like variables, nested rules, mixins, imports, inheritance, built-in functions, and other stuff.
+
+
+
+
+/* Define standard variables and values for website */
+$bgcolor: lightblue;
+$textcolor: darkblue;
+$fontsize: 18px;
+
+/* Use the variables */
+body {
+  background-color: $bgcolor;
+  color: $textcolor;
+  font-size: $fontsize;
+}
+
+
+
+//Sass Variable Scope
+//Sass variables are only available at the level of nesting where they are defined.
+$myColor: red;
+
+h1 {
+  $myColor: green;
+  color: $myColor;
+}
+
+p {
+  color: $myColor;
+}
+
+//!global indicates that a variable is global, which means that it is accessible on all levels.
+h1 {
+  $myColor: green !global;
+  color: $myColor;
+}
+
+
+//Sass Nested Rules
+//Sass lets you nest CSS selectors in the same way as HTML.
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+//Sass Nested Properties
+//Many CSS properties have the same prefix, like font-family, font-size and font-weight or text-align, text-transform and text-overflow.
+
+//font: {
+//  family: Helvetica, sans-serif;
+//  size: 18px;
+//  weight: bold;
+//}
+//
+//text: {
+//  align: center;
+//  transform: lowercase;
+//  overflow: hidden;
+//}
+
+//@import "variables";
+//@import "colors";
+//@import "reset";
+
+//partial Sass file named "_colors.scss". (This file will not be transpiled directly to "colors.css"):
+
+
+@mixin important-text {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid blue;
+}
+
+selector {
+  @include mixin-name;
+}
+//So, to include the important-text mixin created above:
+
+.danger {
+  @include important-text;
+  background-color: green;
+}
+
+
+/* Define mixin with two arguments */
+@mixin bordered($color, $width) {
+  border: $width solid $color;
+}
+
+.myArticle {
+  @include bordered(blue, 1px);  // Call mixin with two values
+}
+
+.myNotes {
+  @include bordered(red, 2px); // Call mixin with two values
+}
+
+//Default Values for a Mixin
+@mixin bordered($color: blue, $width: 1px) {
+  border: $width solid $color;
+}
+
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+.myBox {
+  @include transform(rotate(20deg));
+}
+
+
+//Sass @extend and Inheritance
+.button-basic  {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-report  {
+  @extend .button-basic;
+  background-color: red;
+}
+
+.button-submit  {
+  @extend .button-basic;
+  background-color: green;
+  color: white;
+}
+
+
+.button-basic, .button-report, .button-submit {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-report  {
+  background-color: red;
+}
+
+.button-submit  {
+  background-color: green;
+  color: white;
+}
+
+
+
