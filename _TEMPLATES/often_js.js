@@ -21,6 +21,16 @@ $('#EditDesc #descSave').attr("data-id")
 $(document).ready(function () {
 
 });
+$(document).ready(function () {
+    if (window.innerWidth < 768 ) {
+        $(".slideshow_main .img_cover").each(function () {
+            console.log($(this).attr("src"))
+            let temp =  $(this).attr("src").split('.')
+            $(this).attr("src", temp[0]+"_mobile."+temp[1]);
+            console.log($(this).attr("src"))
+        })
+    }
+});
 document.addEventListener("DOMContentLoaded", function(event) {
     //do work
 });
