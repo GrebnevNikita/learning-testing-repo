@@ -3,6 +3,13 @@
 $search = escape(trim($_GET['search_req']));
 //$search = 'СЛЕСАРНЫЙ ';
 
+
+$date = new DateTime();
+$date->sub(new DateInterval('P30D'));
+$date_format = $date->format('Y-m-d H:i:s');
+
+
+
 if (strlen($search) < 6) { // x2
     print_r('<br>');
     print_r('Запрос должен быть длиннее 2х символов');
