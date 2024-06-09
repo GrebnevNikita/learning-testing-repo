@@ -15,24 +15,19 @@ const root = ReactDOM.createRoot(container);
 root.render(<Hello/>);
 
 
-//What is React?
+// What is React?
 // React, sometimes referred to as a frontend JavaScript framework, is a JavaScript library created by Facebook.
-//
 // React is a tool for building UI components.
 
-//How does React Work?
+// How does React Work?
 // React creates a VIRTUAL DOM in memory.
-//
 // Instead of manipulating the browser's DOM directly, React creates a virtual DOM in memory, where it does all the necessary manipulating, before making the changes in the browser DOM.
-//
 // React only changes what needs to be changed!
-//
 // React finds out what changes have been made, and changes only what needs to be changed.
-//
 // You will learn the various aspects of how React does this in the rest of this tutorial.
 
 
-//React uses ES6
+// React uses ES6
 
 // Classes
 // ES6 introduced classes.
@@ -54,7 +49,7 @@ const mycar = new Car("Ford");
 // Note: The constructor function is called automatically when the object is initialized.
 
 
-//Method in Classes
+// Method in Classes
 class Car {
     constructor(name) {
         this.brand = name;
@@ -97,13 +92,13 @@ const mycar = new Model("Ford", "Mustang");
 mycar.show();
 
 
-//Arrow Functions
+// Arrow Functions
 // Arrow functions allow us to write shorter function syntax:
 
 hello = function () {
     return "Hello World!";
 }
-//with Arrow Function:
+// with Arrow Function:
 hello = () => {
     return "Hello World!";
 }
@@ -118,7 +113,7 @@ hello = (val) => "Hello " + val;
 hello = val => "Hello " + val;
 
 
-//What About this?
+// What About this?
 // The handling of this is also different in arrow functions compared to regular functions.
 // In short, with arrow functions there is no binding of this.
 // In regular functions the this keyword represented the object that called the function,
@@ -138,7 +133,7 @@ class Header {
         this.color = "Red";
     }
 
-//Regular function:
+    // Regular function:
     changeColor = function () {
         document.getElementById("demo").innerHTML += this;
     }
@@ -146,10 +141,10 @@ class Header {
 
 const myheader = new Header();
 
-//The window object calls the function:
+// The window object calls the function:
 window.addEventListener("load", myheader.changeColor);
 
-//A button object calls the function:
+// A button object calls the function:
 document.getElementById("btn").addEventListener("click", myheader.changeColor);
 
 
@@ -160,7 +155,7 @@ class Header {
         this.color = "Red";
     }
 
-//Arrow function:
+    // Arrow function:
     changeColor = () => {
         document.getElementById("demo").innerHTML += this;
     }
@@ -169,10 +164,10 @@ class Header {
 const myheader = new Header();
 
 
-//The window object calls the function:
+// The window object calls the function:
 window.addEventListener("load", myheader.changeColor);
 
-//A button object calls the function:
+// A button object calls the function:
 document.getElementById("btn").addEventListener("click", myheader.changeColor);
 
 
@@ -268,9 +263,9 @@ import message from "./message.js";
 
 
 // if (authenticated) {
-//     renderApp();
+// renderApp();
 // } else {
-//     renderLogin();
+// renderLogin();
 // }
 
 // Here is the same example using a ternary operator:
@@ -279,7 +274,7 @@ import message from "./message.js";
 // authenticated ? renderApp() : renderLogin();
 
 
-//React's goal is in many ways to render HTML in a web page.
+// React's goal is in many ways to render HTML in a web page.
 // React renders HTML to the web page by using a function called createRoot() and its method render().
 // The createRoot Function
 // The createRoot() function takes one argument, an HTML element.
@@ -326,12 +321,12 @@ const root = ReactDOM.createRoot(container);
 root.render(myelement);
 
 
-//What is JSX?
+// What is JSX?
 // JSX stands for JavaScript XML.
 // JSX allows us to write HTML in React.
 // JSX makes it easier to write and add HTML in React.
 
-//Coding JSX
+// Coding JSX
 // JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.
 // JSX converts HTML tags into react elements.
 // You are not required to use JSX, but JSX makes it easier to write React applications.
@@ -382,8 +377,7 @@ const myElement = (
 );
 
 
-//Alternatively, you can use a "fragment" to wrap multiple lines. This will prevent unnecessarily adding extra nodes to the DOM.
-//
+// Alternatively, you can use a "fragment" to wrap multiple lines. This will prevent unnecessarily adding extra nodes to the DOM.
 // A fragment looks like an empty HTML tag: <></>.
 const myElement = (
     <>
@@ -406,7 +400,7 @@ const myElement = <input type="text"/>;
 const myElement = <h1 className="myclass">Hello World</h1>;
 
 
-//React supports if statements, but not inside JSX.
+// React supports if statements, but not inside JSX.
 const x = 5;
 let text = "Goodbye";
 if (x < 10) {
@@ -449,13 +443,13 @@ function Car() {
 
 
 // Now your React application has a component called Car, which returns an <h2> element.
-//  use this component in your application, use similar syntax as normal HTML: <Car />
+// use this component in your application, use similar syntax as normal HTML: <Car />
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Car/>);
 
 
-//Props
+// Props
 // Components can be passed as props, which stands for properties.
 // Props are like function arguments, and you send them into the component as attributes.
 // You will learn more about props in the next chapter.
@@ -469,7 +463,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Car color="red"/>);
 
 
-//Components in Components
+// Components in Components
 
 
 // Use the Car component inside the Garage component:
@@ -516,7 +510,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Car/>);
 
 
-//Before React 16.8, Class components were the only way to track state and lifecycle on a React component. Function components were considered "state-less".
+// Before React 16.8, Class components were the only way to track state and lifecycle on a React component. Function components were considered "state-less".
 // With the addition of Hooks, Function components are now almost equivalent to Class components. The differences are so minor that you will probably never need to use a Class component in React.
 // Even though Function components are preferred, there are no current plans on removing Class components from React.
 // This section will give you an overview of how to use Class components in React.
@@ -563,11 +557,10 @@ function Garage() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Garage/>);
 
-//Note: React Props are read-only! You will get an error if you try to change their value.
+// Note: React Props are read-only! You will get an error if you try to change their value.
 
 
-
-//Just like HTML DOM events, React can perform actions based on user events.
+// Just like HTML DOM events, React can perform actions based on user events.
 // React has the same events as HTML: click, change, mouseover etc.
 // Adding Events
 // React events are written in camelCase syntax:
@@ -582,21 +575,18 @@ root.render(<Garage/>);
 
 
 // Put the shoot function inside the Football component:
-    function Football() {
-        const shoot = () => {
-            alert("Great Shot!");
-        }
-
-        return (
-            <button onClick={shoot}>Take the shot!</button>
-        );
+function Football() {
+    const shoot = () => {
+        alert("Great Shot!");
     }
 
+    return (
+        <button onClick={shoot}>Take the shot!</button>
+    );
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Football />);
-
-
-
+root.render(<Football/>);
 
 
 // Passing Arguments
@@ -614,10 +604,700 @@ function Football() {
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Football />);
+root.render(<Football/>);
 
 
+// Arrow Function: Sending the event object manually:
+function Football() {
+    const shoot = (a, b) => {
+        alert(b.type);
+        /*
+        'b' represents the React event that triggered the function,
+        in this case the 'click' event
+        */
+    }
 
+    return (
+        <button onClick={(event) => shoot("Goal!", event)}>Take the shot!</button>
+    );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Football/>);
+
+
+// if Statement
+// We can use the if JavaScript operator to decide which component to render.
+
+function MissedGoal() {
+    return <h1>MISSED!</h1>;
+}
+
+function MadeGoal() {
+    return <h1>Goal!</h1>;
+}
+
+function Goal(props) {
+    const isGoal = props.isGoal;
+    if (isGoal) {
+        return <MadeGoal/>;
+    }
+    return <MissedGoal/>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Goal isGoal={false}/>);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Goal isGoal={true}/>);
+
+
+// Logical && Operator
+
+
+function Garage(props) {
+    const cars = props.cars;
+    return (
+        <>
+            <h1>Garage</h1>
+            {cars.length > 0 &&
+            <h2>
+                You have {cars.length} cars in your garage.
+            </h2>
+            }
+        </>
+    );
+}
+
+const cars = ['Ford', 'BMW', 'Audi'];
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage cars={cars}/>);
+
+
+// If cars.length > 0 is equates to true, the expression after && will render.
+// Try emptying the cars array:
+const cars = [];
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage cars={cars}/>);
+
+
+// Ternary Operator
+// Another way to conditionally render elements is by using a ternary operator.
+// condition ? true : false
+
+// Return the MadeGoal component if isGoal is true, otherwise return the MissedGoal component:
+
+function Goal(props) {
+    const isGoal = props.isGoal;
+    return (
+        <>
+            {isGoal ? <MadeGoal/> : <MissedGoal/>}
+        </>
+    );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Goal isGoal={false}/>);
+
+
+// In React, you will render lists with some type of loop.
+// The JavaScript map() array method is generally the preferred method.
+
+function Car(props) {
+    return <li>I am a {props.brand}</li>;
+}
+
+function Garage() {
+    const cars = ['Ford', 'BMW', 'Audi'];
+    return (
+        <>
+            <h1>Who lives in my garage?</h1>
+            <ul>
+                {cars.map((car) => <Car brand={car}/>)}
+            </ul>
+        </>
+    );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage/>);
+
+
+// Keys allow React to keep track of elements. This way, if an item is updated or removed, only that item will be re-rendered instead of the entire list.
+// Keys need to be unique to each sibling. But they can be duplicated globally.
+// Generally, the key should be a unique ID assigned to each item. As a last resort, you can use the array index as a key.
+
+
+// Let's refactor our previous example to include keys:
+
+function Car(props) {
+    return <li>I am a {props.brand}</li>;
+}
+
+function Garage() {
+    const cars = [
+        {id: 1, brand: 'Ford'},
+        {id: 2, brand: 'BMW'},
+        {id: 3, brand: 'Audi'}
+    ];
+    return (
+        <>
+            <h1>Who lives in my garage?</h1>
+            <ul>
+                {cars.map((car) => <Car key={car.id} brand={car.brand}/>)}
+            </ul>
+        </>
+    );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage/>);
+
+
+// Adding Forms in React
+// This will work as normal, the form will submit and the page will refresh.
+// But this is generally not what we want to happen in React.
+// We want to prevent this default behavior and let React control the form.
+
+
+function MyForm() {
+    return (
+        <form>
+            <label>Enter your name:
+                <input type="text"/>
+            </label>
+        </form>
+    )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<MyForm/>);
+
+
+// Handling forms is about how you handle the data when it changes value or gets submitted.
+// In HTML, form data is usually handled by the DOM.
+// In React, form data is usually handled by the components.
+// When the data is handled by the components, all the data is stored in the component state.
+// You can control changes by adding event handlers in the onChange attribute.
+// We can use the useState Hook to keep track of each inputs value and provide a "single source of truth" for the entire application.
+
+
+// Use the useState Hook to manage the input:
+
+import {useState} from 'react';
+import ReactDOM from 'react-dom/client';
+
+function MyForm() {
+    const [name, setName] = useState("");
+
+    return (
+        <form>
+            <label>Enter your name:
+                <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+            </label>
+        </form>
+    )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<MyForm/>);
+
+// Submitting Forms
+// You can control the submit action by adding an event handler in the onSubmit attribute for the <form>:
+
+
+import {useState} from 'react';
+import ReactDOM from 'react-dom/client';
+
+function MyForm() {
+    const [name, setName] = useState("");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(`The name you entered was: ${name}`)
+    }
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <label>Enter your name:
+                <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+            </label>
+            <input type="submit"/>
+        </form>
+    )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<MyForm/>);
+
+
+// Multiple Input Fields
+// You can control the values of more than one input field by adding a name attribute to each element.
+// We will initialize our state with an empty object.
+// To access the fields in the event handler use the event.target.name and event.target.value syntax.
+// To update the state, use square brackets [bracket notation] around the property name.
+
+// Write a form with two input fields:
+
+import {useState} from 'react';
+import ReactDOM from 'react-dom/client';
+
+function MyForm() {
+    const [inputs, setInputs] = useState({});
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setInputs(values => ({...values, [name]: value}))
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(inputs);
+    }
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <label>Enter your name:
+                <input
+                    type="text"
+                    name="username"
+                    value={inputs.username || ""}
+                    onChange={handleChange}
+                />
+            </label>
+            <label>Enter your age:
+                <input
+                    type="number"
+                    name="age"
+                    value={inputs.age || ""}
+                    onChange={handleChange}
+                />
+            </label>
+            <input type="submit"/>
+        </form>
+    )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<MyForm/>);
+
+
+// A simple textarea with some content:
+
+import {useState} from 'react';
+import ReactDOM from 'react-dom/client';
+
+function MyForm() {
+    const [textarea, setTextarea] = useState(
+        "The content of a textarea goes in the value attribute"
+    );
+
+    const handleChange = (event) => {
+        setTextarea(event.target.value)
+    }
+
+    return (
+        <form>
+            <textarea value={textarea} onChange={handleChange}/>
+        </form>
+    )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<MyForm/>);
+
+
+// In React, the selected value is defined with a value attribute on the select tag:
+// A simple select box, where the selected value "Volvo" is initialized in the constructor:
+
+function MyForm() {
+    const [myCar, setMyCar] = useState("Volvo");
+
+    const handleChange = (event) => {
+        setMyCar(event.target.value)
+    }
+
+    return (
+        <form>
+            <select value={myCar} onChange={handleChange}>
+                <option value="Ford">Ford</option>
+                <option value="Volvo">Volvo</option>
+                <option value="Fiat">Fiat</option>
+            </select>
+        </form>
+    )
+}
+
+
+// Create React App doesn't include page routing.
+// React Router is the most popular solution.
+// Add React Router
+// To add React Router in your application, run this in the terminal from the root directory of the application:
+// npm i -D react-router-dom
+
+
+import ReactDOM from "react-dom/client";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
+import NoPage from "./pages/NoPage";
+
+export default function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout/>}>
+                    <Route index element={<Home/>}/>
+                    <Route path="blogs" element={<Blogs/>}/>
+                    <Route path="contact" element={<Contact/>}/>
+                    <Route path="*" element={<NoPage/>}/>
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App/>);
+// We wrap our content first with <BrowserRouter>.
+// Then we define our <Routes>. An application can have multiple <Routes>. Our basic example only uses one.
+// <Route>s can be nested. The first <Route> has a path of / and renders the Layout component.
+// The nested <Route>s inherit and add to the parent route. So the blogs path is combined with the parent and becomes /blogs.
+// The Home component route does not have a path but has an index attribute. That specifies this route as the default route for the parent route, which is /.
+// Setting the path to * will act as a catch-all for any undefined URLs. This is great for a 404 error page.
+
+
+// Pages / Components
+// The Layout component has <Outlet> and <Link> elements.
+// The <Outlet> renders the current route selected.
+// <Link> is used to set the URL and keep track of browsing history.
+// Anytime we link to an internal path, we will use <Link> instead of <a href="">.
+// The "layout route" is a shared component that inserts common content on all pages, such as a navigation menu.
+
+
+// Layout.js:
+
+import {Outlet, Link} from "react-router-dom";
+
+const Layout = () => {
+    return (
+        <>
+            <nav>
+                <ul>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/blogs">Blogs</Link>
+                    </li>
+                    <li>
+                        <Link to="/contact">Contact</Link>
+                    </li>
+                </ul>
+            </nav>
+
+            <Outlet/>
+        </>
+    )
+};
+
+export default Layout;
+// Home.js:
+
+const Home = () => {
+    return <h1>Home</h1>;
+};
+
+export default Home;
+// Blogs.js:
+
+const Blogs = () => {
+    return <h1>Blog Articles</h1>;
+};
+
+export default Blogs;
+// Contact.js:
+
+const Contact = () => {
+    return <h1>Contact Me</h1>;
+};
+
+export default Contact;
+// NoPage.js:
+
+const NoPage = () => {
+    return <h1>404</h1>;
+};
+
+export default NoPage;
+
+
+// Using memo will cause React to skip rendering a component if its props have not changed.
+// This can improve performance.
+
+
+// Problem
+// In this example, the Todos component re-renders even when the todos have not changed.
+
+// index.js:
+
+import {useState} from "react";
+import ReactDOM from "react-dom/client";
+import Todos from "./Todos";
+
+const App = () => {
+    const [count, setCount] = useState(0);
+    const [todos, setTodos] = useState(["todo 1", "todo 2"]);
+
+    const increment = () => {
+        setCount((c) => c + 1);
+    };
+
+    return (
+        <>
+            <Todos todos={todos}/>
+            <hr/>
+            <div>
+                Count: {count}
+                <button onClick={increment}>+</button>
+            </div>
+        </>
+    );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App/>);
+// Todos.js:
+
+const Todos = ({todos}) => {
+    console.log("child render");
+    return (
+        <>
+            <h2>My Todos</h2>
+            {todos.map((todo, index) => {
+                return <p key={index}>{todo}</p>;
+            })}
+        </>
+    );
+};
+
+export default Todos;
+
+
+// Solution
+// To fix this, we can use memo.
+// Use memoto keep the Todos component from needlessly re-rendering.
+// Wrap the Todos component export in memo:
+
+
+// index.js:
+import {useState} from "react";
+import ReactDOM from "react-dom/client";
+import Todos from "./Todos";
+
+const App = () => {
+    const [count, setCount] = useState(0);
+    const [todos, setTodos] = useState(["todo 1", "todo 2"]);
+
+    const increment = () => {
+        setCount((c) => c + 1);
+    };
+
+    return (
+        <>
+            <Todos todos={todos}/>
+            <hr/>
+            <div>
+                Count: {count}
+                <button onClick={increment}>+</button>
+            </div>
+        </>
+    );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App/>);
+
+// Todos.js:
+
+import {memo} from "react";
+
+const Todos = ({todos}) => {
+    console.log("child render");
+    return (
+        <>
+            <h2>My Todos</h2>
+            {todos.map((todo, index) => {
+                return <p key={index}>{todo}</p>;
+            })}
+        </>
+    );
+};
+
+export default memo(Todos);
+
+
+// Styling React Using CSS
+// Note: In JSX, JavaScript expressions are written inside curly braces,
+// and since JavaScript objects also use curly braces,
+// the styling in the example above is written inside two sets of curly braces {{}}.
+
+// Insert an object with the styling information:
+const Header = () => {
+    return (
+        <>
+            <h1 style={{color: "red"}}>Hello Style!</h1>
+            <p>Add a little style!</p>
+        </>
+    );
+}
+
+// camelCased Property Names
+// Since the inline CSS is written in a JavaScript object, properties with hyphen separators, like background-color, must be written with camel case syntax:
+// Use backgroundColor instead of background-color:
+
+const Header = () => {
+    return (
+        <>
+            <h1 style={{backgroundColor: "lightblue"}}>Hello Style!</h1>
+            <p>Add a little style!</p>
+        </>
+    );
+}
+
+// Create a style object named myStyle:
+
+const Header = () => {
+    const myStyle = {
+        color: "white",
+        backgroundColor: "DodgerBlue",
+        padding: "10px",
+        fontFamily: "Sans-Serif"
+    };
+    return (
+        <>
+            <h1 style={myStyle}>Hello Style!</h1>
+            <p>Add a little style!</p>
+        </>
+    );
+}
+
+
+// CSS Stylesheet
+// You can write your CSS styling in a separate file, just save the file with the .css file extension, and import it in your application.
+// App.css:
+// body {
+// background-color: #282c34;
+// color: white;
+// padding: 40px;
+// font-family: Sans-Serif;
+// text-align: center;
+// }
+
+// Import the stylesheet in your application:
+// index.js:
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './App.css';
+
+const Header = () => {
+    return (
+        <>
+            <h1>Hello Style!</h1>
+            <p>Add a little style!.</p>
+        </>
+    );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Header/>);
+
+
+// CSS Modules
+// Another way of adding styles to your application is to use CSS Modules.
+// CSS Modules are convenient for components that are placed in separate files.
+// The CSS inside a module is available only for the component that imported it, and you do not have to worry about name conflicts.
+// Create the CSS module with the .module.css extension, example: my-style.module.css.
+
+
+// Create a new file called "my-style.module.css" and insert some CSS code in it:
+
+// my-style.module.css:
+// .bigblue {
+// color: DodgerBlue;
+// padding: 40px;
+// font-family: Sans-Serif;
+// text-align: center;
+// }
+
+// Import the stylesheet in your component:
+
+// Car.js:
+import styles from './my-style.module.css';
+
+const Car = () => {
+    return <h1 className={styles.bigblue}>Hello Car!</h1>;
+}
+
+export default Car;
+
+// Import the component in your application:
+
+// index.js:
+import ReactDOM from 'react-dom/client';
+import Car from './Car.js';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car/>);
+
+
+// Install Sass by running this command in your terminal:
+// npm i sass
+
+
+// my-sass.scss:
+
+// Create a variable to define the color of the text:
+// $myColor: red;
+// h1 {
+// color: $myColor;
+// }
+
+// Import the Sass file the same way as you imported a CSS file:
+
+// index.js:
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './my-sass.scss';
+
+const Header = () => {
+    return (
+        <>
+            <h1>Hello Style!</h1>
+            <p>Add a little style!.</p>
+        </>
+    );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Header/>);
+
+
+// Hooks were added to React in version 16.8.
+// Hooks allow function components to have access to state and other React features. Because of this, class components are generally no longer needed.
 
 
 

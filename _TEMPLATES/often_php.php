@@ -9,6 +9,15 @@ $date->sub(new DateInterval('P30D'));
 $date_format = $date->format('Y-m-d H:i:s');
 
 
+usort($offers, function ($a, $b) {
+    if ($a['count_main_similar'] > $b['count_main_similar']) {
+        return 1;
+    } elseif ($a['count_main_similar'] < $b['count_main_similar']) {
+        return -1;
+    }
+    return 0;
+});
+
 
 if (strlen($search) < 6) { // x2
     print_r('<br>');
